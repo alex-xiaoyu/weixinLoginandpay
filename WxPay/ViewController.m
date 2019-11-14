@@ -131,8 +131,8 @@
   
     if (resp.errCode == 0) {
         _code = resp.code;
-        appId =@"wx3296b3afb8de42ce";
-        appSecret =@"54b7edca70b7103137ac2ee6c755a9c2";
+        appId =@"";
+        appSecret =@"";
     }else{
         NSLog(@"%d",resp.errCode);
         UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"授权失败" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -208,7 +208,6 @@
         nicknameLabel.text = resp[@"nickname"];
         provinceLabel.text = resp[@"province"];
         NSString *str =resp[@"headimgurl"];
-        NSString* strstr = [NSString stringWithFormat:@"%@%@",str,@".png"];
         NSURL *photourl = [NSURL URLWithString:str];
         UIImage *images = [UIImage imageWithData:[NSData dataWithContentsOfURL:photourl]];//通过网络url获取uiimage
         headimgurl.image = images;
